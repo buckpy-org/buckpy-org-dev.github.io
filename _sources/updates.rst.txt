@@ -1,0 +1,35 @@
+####################
+Updates by Half-Year
+####################
+
+***********************
+H2 2025 (July–December)
+***********************
+
+   - Improved the GUI for easier use.
+
+   - Enhanced pipe–soil interaction input data for easier input.
+
+   - Released a pip-installable BuckPy package for easier installation and updates.
+
+   - Updated the manual and hosted it on GitHub Pages for better accessibility.
+
+**********************
+H1 2025 (January–June)
+**********************
+
+  - Fixed core calculation issues, including residual buckling-force logic and friction handling.
+
+  - Added more soil friction options and extra input templates for different routes.
+
+  - Expanded benchmarking material and examples in the manual.
+
+***********************
+H2 2024 (July–December)
+***********************
+
+  - Added tools to process and visualise buckling results and compare with Buckfast.
+
+  - Improved plotting of low-probability buckles and combined buckling results.
+
+  - Updated the Getting Started guide and related documentation.

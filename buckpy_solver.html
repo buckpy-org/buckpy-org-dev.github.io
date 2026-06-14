@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Solver Module &#8212; BuckPy 0.1.5 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a5e77869" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="_static/documentation_options.js?v=59fadc99"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'buckpy_solver';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Post-Processing Module" href="buckpy_postprocessing.html" />
+    <link rel="prev" title="Pre-Processing Module (Legacy Version)" href="buckpy_preprocessing_legacy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.5 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.5 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="api_references.html" class="nav-link">API References</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Solver Module</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-buckpy.buckpy_solver">
+<span id="solver-module"></span><h1>Solver Module<a class="headerlink" href="#module-buckpy.buckpy_solver" title="Link to this heading">#</a></h1>
+<p>This module contains the solver functions of BuckPy.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.calc_fric_forces">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">calc_fric_forces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restr_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restr_right</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_solver.html#calc_fric_forces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_solver.calc_fric_forces" title="Link to this definition">#</a></dt>
+<dd><p>Accumulate friction forces from each end of the array. The calculated values are at the center
+of each element, accounting for the average increase between the element and its surrounding
+elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np_array</strong> (<em>numpy.ndarray</em>) – Array containing the local friction force for each element without accounting for
+surrounding values.</p></li>
+<li><p><strong>restr_left</strong> (<em>float</em>) – Constant force to be added at the left of the force profile.</p></li>
+<li><p><strong>restr_right</strong> (<em>float</em>) – Constant force to be added at the right of the force profile.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>np_cumsum_left</strong> (<em>numpy.ndarray</em>) – Cumulated friction force from the left.</p></li>
+<li><p><strong>np_cumsum_right</strong> (<em>numpy.ndarray</em>) – Cumulated friction force from the right.</p></li>
+<li><p><strong>np_rolling_mean_left</strong> (<em>numpy.ndarray</em>) – Average friction force increment from the left.</p></li>
+<li><p><strong>np_rolling_mean_right</strong> (<em>numpy.ndarray</em>) – Average friction force increment from the right.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.calc_friction_force_from_buckle">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">calc_friction_force_from_buckle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_case</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ielt_buckle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buckpy.buckpy_solver.calc_friction_force_from_buckle" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the effective axial frictional forces for each element in a scenario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – 2D array containing scenario-specific data, where rows represent different parameters and
+columns represent elements.</p></li>
+<li><p><strong>np_case</strong> (<em>numpy.ndarray</em>) – 2D array containing case-specific data, where rows represent different parameters and
+columns represent elements.</p></li>
+<li><p><strong>ielt_buckle</strong> (<em>int</em>) – Index of the buckle element.</p></li>
+<li><p><strong>phase_str</strong> (<em>str</em>) – Phase label indicating whether the calculation is for “HT” (hydrotest) or
+“OP” (operational) phase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>np_ff_buckle</strong> – 1D array containing the computed friction forces for each element in the scenario.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.exec_buckpy">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">exec_buckpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_distr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_ends</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fric_sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bl_verbose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_solver.html#exec_buckpy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_solver.exec_buckpy" title="Link to this definition">#</a></dt>
+<dd><p>Execute buckpy methodology</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – Array containing the pipeline desing data on assessed mesh.</p></li>
+<li><p><strong>np_distr</strong> (<em>numpy.ndarray</em>) – 3-D array describing the stochastic distributions:
+- dim 1: properties
+- dim 2: elements
+- dim 3: values</p></li>
+<li><p><strong>np_ends</strong> (<em>numpy.ndarray</em>) – Array containing information about the boundary conditions at the ends of the pipeline.</p></li>
+<li><p><strong>n_sim</strong> (<em>int</em>) – Number of Monte-Carlo simulations to be run.</p></li>
+<li><p><strong>fric_sampling</strong> (<em>int</em>) – Switch to select the sampling method of the lateral friction: 0 for ‘per Element’
+or 1 ‘per OOS Reference Length’</p></li>
+<li><p><strong>bl_verbose</strong> (<em>boolean</em><em>, </em><em>optional</em>) – True if intermediate printouts are required (False by default).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>df_pp_plot</strong> (<em>DataFrame</em>) – Definition on assessed mesh of CBF and EAF in different conditions
+for case to plot.</p></li>
+<li><p><strong>df_VAP_plot</strong> (<em>DataFrame</em>) – Definition of virtual anchor points for case to plot.</p></li>
+<li><p><strong>df_pp_buckle_prop</strong> (<em>DataFrame</em>) – Results for all buckles triggered.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.exec_worker_stack">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">exec_worker_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_sim_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sim_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_distr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_ends</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fric_sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp_output</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_solver.html#exec_worker_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_solver.exec_worker_stack" title="Link to this definition">#</a></dt>
+<dd><p>Run a stack of random simulations using a single worker and add the results to the
+post-processing queue mp_output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_sim_start</strong> (<em>int</em>) – Number of the first simulation to be executed by the current worker.</p></li>
+<li><p><strong>n_sim_end</strong> (<em>int</em>) – Number of the last simulation to be executed by the current worker (i.e., this simulation
+number is not executed in this call to the function).</p></li>
+<li><p><strong>np_distr</strong> (<em>NumPy array</em>) – 3-D numpy array containing the stochastic distributions
+(dim 1: properties, dim 2: elements, dim 3: values).</p></li>
+<li><p><strong>np_scen</strong> (<em>NumPy array</em>) – Numpy array containing the design data along the pipeline route (mesh) that remains
+constant among deterministic and Monte-Carlo simulations
+(except the stochastic distributions).</p></li>
+<li><p><strong>np_ends</strong> (<em>NumPy array</em>) – Returns a numpy array with the definition of the tie-ins at the pipeline ends.</p></li>
+<li><p><strong>fric_sampling</strong> (<em>int</em>) – Switch to select the sampling method of the soil lateral friction factor
+(0 for ‘per Element’ or 1 ‘per OOS Reference Length’).</p></li>
+<li><p><strong>mp_output</strong> (<em>Queue</em>) – Results are added to this Queue for subsequent post-processing.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.preprocess_case">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">preprocess_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_prob_var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_ends</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bl_det</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_solver.html#preprocess_case"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_solver.preprocess_case" title="Link to this definition">#</a></dt>
+<dd><p>Preprocess case based on scenario definition and probabilistic variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np_prob_var</strong> (<em>numpy.ndarray</em>) – Probabilistic variables for the case (shape: 4 x n_elements).</p></li>
+<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – Scenario data array (rows = properties, columns = elements).</p></li>
+<li><p><strong>np_ends</strong> (<em>numpy.ndarray</em>) – End boundary condition array (rows = properties, columns = ends).</p></li>
+<li><p><strong>bl_det</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, use mean values; if False, use sampled values. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>np_case</strong> – Case array (21 x n_elements) with rows:
+- 0  : MUAX
+- 1  : MULAT_HT
+- 2  : MULAT_OP
+- 3  : HOOS
+- 4  : CBF_HT
+- 5  : CBF_OP
+- 6  : LFF_INST
+- 7  : LFF_HT
+- 8  : LFF_OP
+- 9  : RFF_INST
+- 10 : RFF_HT
+- 11 : RFF_OP
+- 12 : EAF_INST
+- 13 : EAF_HT
+- 14 : EAF_P_OP
+- 15 : EAF_OP
+- 16 : EAF_OP_UNBUCK
+- 17 : LDELTAF_HT
+- 18 : RDELTAF_HT
+- 19 : LDELTAF_OP
+- 20 : RDELTAF_OP</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Computes CBF and frictional forces based on route type and boundary conditions,
+and builds effective axial force (EAF) profiles for installation, hydrotest, and operation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.run_monte_carlo">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">run_monte_carlo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_worker</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_distr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_ends</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fric_sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bl_verbose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_solver.html#run_monte_carlo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_solver.run_monte_carlo" title="Link to this definition">#</a></dt>
+<dd><p>Set to run the Monte-Carlo simulations using multiple workers and gather the properties of
+the buckles that have triggered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_worker</strong> (<em>int</em>) – Number of worker processes spawned in the multiprocess.</p></li>
+<li><p><strong>n_sim</strong> (<em>int</em>) – Number of Monte-Carlo simulations to be run.</p></li>
+<li><p><strong>np_distr</strong> (<em>NumPy array</em>) – 3-D numpy array containing the stochastic distributions
+(dim 1: properties, dim 2: elements, dim 3: values).</p></li>
+<li><p><strong>np_scen</strong> (<em>NumPy array</em>) – Numpy array containing the design data along the pipeline
+route (mesh) that remains constant among deterministic and
+Monte-Carlo simulations (except the stochastic distributions).</p></li>
+<li><p><strong>np_ends</strong> (<em>NumPy array</em>) – Returns a numpy array with the definition of the tie-ins at
+the pipeline ends.</p></li>
+<li><p><strong>fric_sampling</strong> (<em>int</em>) – Switch to select the sampling method of the soil lateral friction
+factor (0 for ‘per Element’ or 1 ‘per OOS Reference Length’).</p></li>
+<li><p><strong>bl_verbose</strong> (<em>boolean</em><em>, </em><em>optional</em>) – True if intermediate printouts are required (False by default).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>list_buckle_prop</strong> – Array containing for each simulation the properties of
+the buckle(s) that has(ve) triggered.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.sample_randomness_case">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">sample_randomness_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fric_sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_distr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buckpy.buckpy_solver.sample_randomness_case" title="Link to this definition">#</a></dt>
+<dd><p>Samples the stochastic variables (HOOS and friction factors).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fric_sampling</strong> (<em>int</em>) – Switch to select the sampling method of the lateral friction: 0 for ‘per Element’
+or 1 ‘per OOS Reference Length’</p></li>
+<li><p><strong>np_distr</strong> (<em>numpy.ndarray</em>) – 3-D array describing the stochastic distributions: Dim 1 = Properties, Dim 2 = Elements and
+Dim 3 = values</p></li>
+<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – Array containing the pipeline desing data on assessed mesh.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>np_prob_var</strong> – Definition of probabilistic variables on assessed mesh.
+Rows correspond to properties: MUAX = 0, MULAT_HT = 1, MULAT_OP = 2, HOOS = 3</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The returned <cite>np_prob_var</cite> has values by columns corresponding to mesh elements
+over 4 rows corresponding to properties defined above.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">MUAX: Axial friction coefficient</div>
+<div class="line">MULAT_HT: Lateral friction coefficient for Hydrotest condition</div>
+<div class="line">MULAT_OP: Lateral friction coefficient for Operation condition</div>
+<div class="line">HOOS: Soil property indicator</div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buckpy.buckpy_solver.solve_case">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_solver.</span></span><span class="sig-name descname"><span class="pre">solve_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_scen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_case</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buckpy.buckpy_solver.solve_case" title="Link to this definition">#</a></dt>
+<dd><p>Calculate effective force profiles during hydrotest and operation and identify buckle properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – Scenario array (rows = properties, columns = elements).</p></li>
+<li><p><strong>np_case</strong> (<em>numpy.ndarray</em>) – Case array (rows = properties, columns = elements).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>np_pp_buckle</strong> (<em>numpy.ndarray</em>) – 2D array (n_buckles x 8) with columns:
+- 0 : SIM_PP
+- 1 : KP_PP
+- 2 : ROUTE_TYPE_PP
+- 3 : MUAX_PP
+- 4 : MULAT_OP_PP
+- 5 : HOOS_PP
+- 6 : CBF_OP_PP
+- 7 : VAS_PP</p></li>
+<li><p><strong>np_case</strong> (<em>numpy.ndarray</em>) – Updated case array (21 x n_elements).</p></li>
+<li><p><strong>vap_list</strong> (<em>list[list]</em>) – [element_index, KP, ESF_op] for virtual anchor points (sorted by KP).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Buckle identification is performed in stages (HT, OP pressure-only, OP pressure+temperature),
+updating EAF profiles after each buckle is found.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="buckpy_preprocessing_legacy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pre-Processing Module (Legacy Version)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="buckpy_postprocessing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Post-Processing Module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.calc_fric_forces"><code class="docutils literal notranslate"><span class="pre">calc_fric_forces()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.calc_friction_force_from_buckle"><code class="docutils literal notranslate"><span class="pre">calc_friction_force_from_buckle()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.exec_buckpy"><code class="docutils literal notranslate"><span class="pre">exec_buckpy()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.exec_worker_stack"><code class="docutils literal notranslate"><span class="pre">exec_worker_stack()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.preprocess_case"><code class="docutils literal notranslate"><span class="pre">preprocess_case()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.run_monte_carlo"><code class="docutils literal notranslate"><span class="pre">run_monte_carlo()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.sample_randomness_case"><code class="docutils literal notranslate"><span class="pre">sample_randomness_case()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_solver.solve_case"><code class="docutils literal notranslate"><span class="pre">solve_case()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/buckpy_solver.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Ismael Ripoll, Carlos Sicilia &amp; Emilien Bonnet.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

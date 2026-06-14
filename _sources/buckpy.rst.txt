@@ -1,0 +1,7 @@
+Main Module
+===========
+
+.. automodule:: buckpy.buckpy
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+Solver Module
+=============
+
+.. automodule:: buckpy.buckpy_solver
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+Variables Module
+================
+
+.. automodule:: buckpy.buckpy_variables
+   :members:
+   :undoc-members:
+   :show-inheritance:

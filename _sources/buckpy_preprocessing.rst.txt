@@ -1,0 +1,12 @@
+4. Pre-Processing Module
+========================
+
+.. automodule:: buckpy.buckpy_preprocessing_current
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: buckpy.buckpy_preprocessing_legacy
+   :members:
+   :undoc-members:
+   :show-inheritance:

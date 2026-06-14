@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting Started &#8212; BuckPy 0.1.5 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5c20f255" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="_static/documentation_options.js?v=59fadc99"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Technical References" href="technical_references.html" />
+    <link rel="prev" title="BuckPy" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.5 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.5 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Getting Started</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<section id="launching-buckpy-using-the-pip-install-package">
+<h2>Launching BuckPy using the pip install Package<a class="headerlink" href="#launching-buckpy-using-the-pip-install-package" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Set up a virtual environment and install BuckPy (first time only):</p>
+<ul>
+<li><p>Create a folder for the virtual environment:</p>
+<ul class="simple">
+<li><p>This is where BuckPy and its dependencies will be installed.</p></li>
+<li><p>You can create it anywhere, for instance <cite>C:\BuckPy</cite>.</p></li>
+<li><p>This folder will be referred to as the BuckPy directory in the following steps.</p></li>
+</ul>
+</li>
+<li><p>Open a Windows terminal in this folder and create a virtual environment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code></p>
+</li>
+<li><p>Install BuckPy using pip (Python &gt;=3.9 and &lt;=3.12):</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">buckpy</span></code></p>
+</li>
+<li><p>Notes:</p>
+<ul class="simple">
+<li><p>BuckPy can be installed and run by anyone using pip install buckpy, regardless of whether they have access to the private BuckPy repository.</p></li>
+<li><p>Installing BuckPy <strong>inside</strong> the virtual environment is important. Installing it globally may interfere with other Python scripts or libraries already on your system.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Activate the virtual environment and launch BuckPy (for each session):</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>Open a Windows terminal in the directory where BuckPy was installed and activate the virtual environment [This command works in the VSCode’s PowerShell. Command may vary in other shells]:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">.\.venv\Scripts\activate</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p>To launch BuckPy, run the following command in the terminal:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">buckpy</span></code></p>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="launching-buckpy-using-the-source-code">
+<h2>Launching BuckPy using the Source Code<a class="headerlink" href="#launching-buckpy-using-the-source-code" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Before running BuckPy for the first time using the source code, follow these steps to activate a virtual environment from the REQUIREMENTS.TXT file:</p>
+<ul>
+<li><p>Open a Command Prompt or PowerShell and navigate to the folder where BuckPy is cloned.</p></li>
+<li><p>To create the virtual environment, run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">env</span></code></p>
+</li>
+<li><p>To activate the virtual environment, run [This command works in the VSCode’s PowerShell. Command may vary in other shells]:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">.\.venv\Scripts\activate</span></code></p>
+</li>
+<li><p>To install the necessary libraries, run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">./REQUIREMENTS.txt</span></code></p>
+</li>
+<li><p>To run BuckPy, execute:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">buckpy</span></code></p>
+</li>
+</ul>
+<p>Afterwards, before running BuckPy following Step 5, simply activate the virtual environment using the command in Step 3.</p>
+</div></blockquote>
+</section>
+<section id="how-to-start-a-simulation">
+<h2>How to Start a Simulation?<a class="headerlink" href="#how-to-start-a-simulation" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Create a working directory:</p>
+<ul class="simple">
+<li><p>This is a dedicated folder where all input and output files for your simulations will be stored.</p></li>
+<li><p>You can create it anywhere on your computer.</p></li>
+<li><p>This folder will be referred to as the working directory in the following steps.</p></li>
+</ul>
+</li>
+<li><p>Add the Excel input file(s):</p>
+<ul class="simple">
+<li><p>Save in this folder the Excel input file with the design data required to run BuckPy.</p></li>
+<li><p>As a good starting point, use an example from the examples folder in the <a class="reference external" href="https://github.com/Xodus-Group/BuckPy">BuckPy Repository</a>.</p></li>
+<li><p>All output files and figures generated during the simulation will be saved in this directory.</p></li>
+</ul>
+</li>
+<li><p>Launch BuckPy following the steps in the section: Launching BuckPy using the pip install Package or Launching BuckPy using the Source Code.</p></li>
+<li><p>The BuckPy graphical user interface (GUI) will open:</p>
+<ul class="simple">
+<li><p>From here, you can go to the working directory and select the Excel input file, and configure the simulation parameters.</p></li>
+<li><p>For additional details, visit the section: How to Modify the Design Data?</p></li>
+</ul>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="how-to-modify-the-design-data">
+<h2>How to Modify the Design Data?<a class="headerlink" href="#how-to-modify-the-design-data" title="Link to this heading">#</a></h2>
+<section id="data-to-be-modified-in-the-gui">
+<h3>Data to be Modified in the GUI<a class="headerlink" href="#data-to-be-modified-in-the-gui" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The following variables have to be updated in the GUI:</p>
+<ol class="arabic simple">
+<li><p><strong>Select Excel input file format</strong>: Choose between the Current or Legacy BuckPy input file formats. Examples of both formats are provided in the repository for reference.</p></li>
+<li><p><strong>Select Excel input file</strong>: A dialog will open to select the Excel input file. The output file and plot will also be stored in this directory.</p></li>
+<li><p><strong>Pipeline ID</strong>: Pipeline of the input file to be analysed.</p></li>
+<li><p><strong>Scenario ID</strong>: Pipeline scenario or sensitivity to be analysed. Multiple scenarios can be defined and will be run in a batch process (comma-separated).</p></li>
+<li><p><strong>Enable verbose output</strong>: True or False flag to select whether the information on how the script progresses needs to be printed out in the terminal.</p></li>
+<li><p><strong>Extract extended results</strong>: True or False flag to select whether extended results need to be extracted. This functionality is still under development and can slow down the simulation significantly.</p></li>
+<li><p><strong>Run all scenarios</strong>: Press this button to run all the selected scenarios.</p></li>
+</ol>
+<p>The following image has been taken from the <cite>GUI</cite> of <cite>buckpy.py</cite> to illustrate how the previous
+variables actually look in the script:</p>
+<img alt="_images/gui.png" class="align-center" src="_images/gui.png" />
+</div></blockquote>
+</section>
+<section id="data-to-be-modified-in-the-inputfiletemplate-current-xlsx">
+<h3>Data to be Modified in the <code class="docutils literal notranslate"><span class="pre">inputFileTemplate_Current.xlsx</span></code><a class="headerlink" href="#data-to-be-modified-in-the-inputfiletemplate-current-xlsx" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The current BuckPy format shares many similarities with the legacy format, which is detailed below.
+The main difference is that the current format has been redesigned to be more user-friendly and intuitive.
+It introduces three main tabs:</p>
+<ul class="simple">
+<li><p><strong>Route</strong>: Defines the pipeline route. This tab has been simplified for usability and no longer includes mitigation measures or soil zoning data.</p></li>
+<li><p><strong>Mitigation</strong>: Defines the mitigation measures that can be applied along the pipeline route.</p></li>
+<li><p><strong>Soil Zoning</strong>: Defines the soil zoning information applicable to the pipeline route.</p></li>
+</ul>
+<p>Additional guidance on how to modify design data using the current format will be provided in future documentation.
+In the meantime, the examples provided in the repository include both legacy and current formats and are intended to be self-explanatory.</p>
+<p>The current format is recommended for all new projects.</p>
+</div></blockquote>
+</section>
+<section id="data-to-be-modified-in-the-inputfiletemplate-legacy-xlsx">
+<h3>Data to be Modified in the <code class="docutils literal notranslate"><span class="pre">inputFileTemplate_Legacy.xlsx</span></code><a class="headerlink" href="#data-to-be-modified-in-the-inputfiletemplate-legacy-xlsx" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The Excel file provided in the legacy format in the repository (<code class="docutils literal notranslate"><span class="pre">inputFileTemplate_Legacy.xlsx</span></code>)
+contains a design data template of the information required to run BuckPy. The template information
+then has to be replaced by project-specific data. The design data template Excel file has the
+following tabs:</p>
+<ol class="arabic">
+<li><p><strong>Scenario</strong>: Different scenarios (or sensitivities) can be defined in this tab.
+Different pipelines, routes, pipe properties, operating properties and number of simulations
+can be defined for each scenario. Each scenario needs to be defined in a new row.
+There is no limit in the number of scenarios that can be defined.</p>
+<ul class="simple">
+<li><p><cite>Pipeline</cite>: The identifier of the pipeline.</p></li>
+<li><p><cite>Scenario</cite>: The identifier of the scenario.</p></li>
+<li><p><cite>Layout Set</cite>: The identifier of the layout set.</p></li>
+<li><p><cite>Loadcase Set</cite>: The identifier of the loadcase set.</p></li>
+<li><p><cite>Simulations</cite>: The number of simulations.</p></li>
+<li><p><cite>Friction Sampling</cite>: The method for sampling the lateral breakout friction factor (i.e. 0 ‘per Element’ or 1 ‘per OOS Reference Length’).</p></li>
+<li><p><cite>Char. Friction Prob.</cite>: The probability of exceedance among the lateral breakout friction factors.</p></li>
+<li><p><cite>Scenario Description</cite>: The description of each simulation scenario.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_input_scenario.png" class="align-center" src="_images/excel_file_input_scenario.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Route</strong>: Different route layout sets are defined in this tab. Multiple sections can be defined
+(Spool, Straight, Bend, Sleeper or RCM) per route layout. Different pipe properties,
+friction factors, HOOS factors and residual buckle force and length can be defined for each section.
+Routes can be grouped by pipelines (multiple pipelines can be defined).</p>
+<ul class="simple">
+<li><p><cite>Pipeline</cite>: The identifier of the pipeline.</p></li>
+<li><p><cite>Layout Set</cite>: The identifier of the layout set.</p></li>
+<li><p><cite>Pipe Set</cite>: The identifier of the pipeline set.</p></li>
+<li><p><cite>Friction Set</cite>: The identifier of the friction set.</p></li>
+<li><p><cite>Route Type</cite>: If Point ID From or Point ID To is Start or End, the available route types are Spool and Fixed. Elsewhere, the available route types are Straight, Bend, Sleeper and RCM.</p></li>
+<li><p><cite>Point ID From</cite>: The identifier of the start of the pipeline section.</p></li>
+<li><p><cite>Point ID To</cite>: The identifier of the end of the pipeline section.</p></li>
+<li><p><cite>KP From</cite>: The KP of the start of the pipeline section in the unit of m.</p></li>
+<li><p><cite>KP To</cite>: The KP of the end of the pipeline section in the unit of m.</p></li>
+<li><p><cite>Bend Radius</cite>: The radius of the pipeline section with route type of ‘Bend’ in the unit of m.</p></li>
+<li><p><cite>Sleeper Height</cite>: The height of the sleeper of the pipeline section with route type of ‘Sleeper’.</p></li>
+<li><p><cite>RCM Buckling Force</cite>: The mean of buckling force of the pipeline section with residual curvature.</p></li>
+<li><p><cite>HOOS Mean</cite>: The mean of the HOOS distribution. When the route type is RCM, the HOOS mean needs to be equal to 1.0.</p></li>
+<li><p><cite>HOOS STD</cite>: The standard deviation of the HOOS distribution. When the route type is RCM, HOOS STD needs to be equal to the coefficient of variation (COV) of the CBF, where the COV is defined as the ratio between the STD and the mean of the CBF.</p></li>
+<li><p><cite>HOOS Reference Length</cite>: The reference length of the HOOS distribution in the unit of m.</p></li>
+<li><p><cite>Residual Buckle Force Hydrotest</cite>: The residual buckling force during hydrotest in the unit of N.</p></li>
+<li><p><cite>Residual Buckle Length Hydrotest</cite>: The residual buckling length during hydrotest in the unit of m.</p></li>
+<li><p><cite>Residual Buckle Force Operation</cite>: The residual buckling force during operation in the unit of N.</p></li>
+<li><p><cite>Residual Buckle Length Operation</cite>: The residual buckling length during operation in the unit of m.</p></li>
+<li><p><cite>Reaction Installation</cite>: The reaction force during installation in the unit of N. The sign convention is that all forces are compression positive and tension negative.</p></li>
+<li><p><cite>Reaction Hydrotest</cite>: The reaction force during hydrotest in the unit of N.</p></li>
+<li><p><cite>Reaction Operation</cite>: The reaction force during operation in the unit of N.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_input_route.png" class="align-center" src="_images/excel_file_input_route.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Pipe</strong>: Different pipe properties are defined in this tab. Pipe properties are grouped
+by pipelines and pipe sets (multiple pipe sets can be defined per pipeline).</p>
+<ul class="simple">
+<li><p><cite>Pipeline</cite>: The identifier of the pipeline.</p></li>
+<li><p><cite>Pipe Set</cite>: The identifier of the pipeline set.</p></li>
+<li><p><cite>OD</cite>: The outer diameter in the unit of m.</p></li>
+<li><p><cite>WT</cite>: The wall thickness in the unit of m.</p></li>
+<li><p><cite>E</cite>: The Young’s modulus in the unit of Pa.</p></li>
+<li><p><cite>Poisson</cite>: The Poisson ratio.</p></li>
+<li><p><cite>Alpha</cite>: The thermal expansion.</p></li>
+<li><p><cite>sw Empty</cite>: The submerged weight for the empty pipeline in the unit of N/m.</p></li>
+<li><p><cite>sw Installation</cite>: The submerged weight during installation in the unit of N/m.</p></li>
+<li><p><cite>sw Hydrotest</cite>: The submerged weight during hydrotest in the unit of N/m.</p></li>
+<li><p><cite>sw Operation</cite>: The submerged weight during operation in the unit of N/m.</p></li>
+<li><p><cite>Pipe Description</cite>: The description of the pipeline material properties.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_input_pipe.png" class="align-center" src="_images/excel_file_input_pipe.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Soils</strong>: The LE(P95), BE(P50), and HE(P5) of the axial residual and lateral breakout friction factors are defined in this tab.
+Different lateral breakout friction factors can be specified for hydrotest and operating conditions.
+For each friction factor, the bounds used to determine the lognormal fit are defined (LE_BE, BE_HE, LE_HE or LE_BE_HE).
+Using any of the three bound combinations, BuckPy calculates the mean and standard deviation (STD) of the lognormal fit that minimises the root-mean-square error (RMSE).
+Friction factors can be grouped also by pipeline and friction set.</p>
+<ul class="simple">
+<li><p><cite>Pipeline</cite>: The identifier of the pipeline.</p></li>
+<li><p><cite>Friction Set</cite>: The identifier of the friction set.</p></li>
+<li><p><cite>Axial LE</cite>: LE of the axial friction factor, assumed to have a 95% probability of exceedance (P95).</p></li>
+<li><p><cite>Axial BE</cite>: BE of the axial friction factor, assumed to have a 50% probability of exceedance (P50).</p></li>
+<li><p><cite>Axial HE</cite>: HE of the axial friction factor, assumed to have a 5% probability of exceedance (P5).</p></li>
+<li><p><cite>Axial Fit Bounds</cite>: The bounds used to determine the lognormal fit for the axial friction factor (LE_BE, BE_HE, LE_HE or LE_BE_HE).</p></li>
+<li><p><cite>Lateral Hydrotest LE</cite>: LE of the lateral hydrotest friction factor (P95).</p></li>
+<li><p><cite>Lateral Hydrotest BE</cite>: BE of the lateral hydrotest friction factor (P50).</p></li>
+<li><p><cite>Lateral Hydrotest HE</cite>: HE of the lateral hydrotest friction factor (P5).</p></li>
+<li><p><cite>Lateral Hydrotest Fit Bounds</cite>: The bounds used to determine the lognormal fit for the lateral hydrotest friction factor (LE_BE, BE_HE, LE_HE or LE_BE_HE).</p></li>
+<li><p><cite>Lateral Operation LE</cite>: LE of the lateral operation friction factor (P95).</p></li>
+<li><p><cite>Lateral Operation BE</cite>: BE of the lateral operation friction factor (P50).</p></li>
+<li><p><cite>Lateral Operation HE</cite>: HE of the lateral operation friction factor (P5).</p></li>
+<li><p><cite>Lateral Operation Fit Bounds</cite>: The bounds used to determine the lognormal fit for the lateral operation friction factor (LE_BE, BE_HE, LE_HE or LE_BE_HE).</p></li>
+<li><p><cite>Soil Description</cite>: The description of the soil friction properties.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_input_soil.png" class="align-center" src="_images/excel_file_input_soil.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Operating</strong>: Installation, hydrotest and operating pressures and temperatures and RLT are
+specified in this tab. This tab in turn is used to define the KPs (or elements) in which
+the pressure, temperature and RLT will be interpolated.
+Operating conditions can be grouped by pipeline and loadcase set.</p>
+<ul class="simple">
+<li><p><cite>Pipeline</cite>: The identifier of the pipeline.</p></li>
+<li><p><cite>Loadcase Set</cite>: The identifier of the loadcase set.</p></li>
+<li><p><cite>KP</cite>: The Kilometer Point in the unit of m.</p></li>
+<li><p><cite>Pressure Installation</cite>: The pressure during installation in the unit of Pa.</p></li>
+<li><p><cite>Pressure Hydrotest</cite>: The pressure during hydrotest in the unit of Pa.</p></li>
+<li><p><cite>Pressure Operation</cite>: The pressure during operation in the unit of Pa.</p></li>
+<li><p><cite>Temperature Installation</cite>: The temperature during installation in the unit of Celsius Degree.</p></li>
+<li><p><cite>Temperature Hydrotest</cite>: The temperature during hydrotest in the unit of Celsius Degree.</p></li>
+<li><p><cite>Temperature Operation</cite>: The temperature during operation in the unit of Celsius Degree.</p></li>
+<li><p><cite>RLT</cite>: The Residual Lay Tension in the unit of N (Negative Value).</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_input_operating.png" class="align-center" src="_images/excel_file_input_operating.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Post-Processing</strong>: This tab defines the sets that will be used by BuckPy to define
+the characteristic VAS and friction along the pipeline route. Post-processing sets can be
+grouped by pipeline and layout sets (route sets).</p>
+<ul class="simple">
+<li><p><cite>Pipeline</cite>: The identifier of the pipeline.</p></li>
+<li><p><cite>Layout Set</cite>: The identifier of the layout set.</p></li>
+<li><p><cite>Post-Processing Set</cite>: The identifier of the post-processing set.</p></li>
+<li><p><cite>KP From</cite>: The KP of the start of the pipeline section in the unit of m.</p></li>
+<li><p><cite>KP To</cite>: The KP of the end of the pipeline section in the unit of m.</p></li>
+<li><p><cite>Characteristic VAS Probability</cite>: The probability of exceeding characteristic VAS.</p></li>
+<li><p><cite>Post-Processing Description</cite>: The description of the post-processing sets.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_input_postprocessing.png" class="align-center" src="_images/excel_file_input_postprocessing.png" />
+</li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="which-output-data-is-generated-by-buckpy">
+<h2>Which Output Data is Generated by BuckPy?<a class="headerlink" href="#which-output-data-is-generated-by-buckpy" title="Link to this heading">#</a></h2>
+<section id="output-excel-file">
+<h3>Output Excel file<a class="headerlink" href="#output-excel-file" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The name of the output Excel file will follow the convention
+<code class="docutils literal notranslate"><span class="pre">{INPUT_FILE_NAME}_{PIPELINE_ID}_scen{SCENARIO_ID}_outputs.xlsx</span></code>. For instance,
+<code class="docutils literal notranslate"><span class="pre">inputFileTemplate_A_scen1_outputs.xlsx</span></code>. The output Excel file has the following tabs:</p>
+<ol class="arabic">
+<li><p><strong>Elements</strong>: This tab contains the probability of buckling, stochastic VAS and lateral
+friction factor outputs. It also contains the Characteristic VAS and Friction of the Buckles.
+This information is grouped based on the KP (elements) of the <strong>Operating</strong> tab
+of the template excel file.</p>
+<ul class="simple">
+<li><p><cite>Centroid of the Element (m)</cite>: The KP value of the element centroid in the unit of m.</p></li>
+<li><p><cite>Number of Simulations with a Buckle</cite>: The number of simulations with a buckle.</p></li>
+<li><p><cite>Probability of Buckling</cite>: The probability of buckling in the simulation.</p></li>
+<li><p><cite>Probability of not Buckling</cite>: The probability of not buckling in the simulation.</p></li>
+<li><p><cite>Mean of the VAS (m)</cite>: The mean of the VAS in the unit of m.</p></li>
+<li><p><cite>Standard Deviation of the VAS (m)</cite>: The standard deviation of the VAS in the unit of m.</p></li>
+<li><p><cite>Minimum VAS (m)</cite>: The minimum of the VAS in the unit of m.</p></li>
+<li><p><cite>Maximum VAS (m)</cite>: The Maximum of the VAS in the unit of m.</p></li>
+<li><p><cite>Mean of the Lateral Breakout Friction</cite>: The mean of the lateral breakout friction factor.</p></li>
+<li><p><cite>Standard Deviation of the Lateral Breakout Friction</cite>: The standard deviation of the lateral breakout friction factor.</p></li>
+<li><p><cite>Minimum Lateral Breakout Friction</cite>: The minimum of the lateral breakout friction factor.</p></li>
+<li><p><cite>Maximum Lateral Breakout Friction</cite>: The maximum of the lateral breakout friction factor.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_elements.png" class="align-center" src="_images/excel_file_output_elements.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Sets</strong>: This tab contains the probability of buckling, and stochastic VAS and lateral
+friction factor outputs. It also contains the Characteristic VAS and Friction of the Buckles.
+This information is grouped based on the <strong>Post-Processing Set</strong> of the <strong>Post-Processing</strong> tab
+of the input excel file.</p>
+<ul class="simple">
+<li><p><cite>Set Label</cite>: The identifier of the post-processing set.</p></li>
+<li><p><cite>KP From (m)</cite>: The KP of the start of the pipeline section in the unit of m.</p></li>
+<li><p><cite>KP To (m)</cite>: The KP of the end of the pipeline section in the unit of m.</p></li>
+<li><p><cite>Number of Simulations with Buckles per Set</cite>: The number of simulations with buckles in each set.</p></li>
+<li><p><cite>Number of Buckles per Set</cite>: The number of buckles in each set.</p></li>
+<li><p><cite>Probability of Buckling</cite>: The probability of buckling in the set.</p></li>
+<li><p><cite>Probability of not Buckling</cite>: The probability of not buckling in the set.</p></li>
+<li><p><cite>Mean of the VAS (m)</cite>: The mean of the VAS in the unit of m.</p></li>
+<li><p><cite>Standard Deviation of the VAS (m)</cite>: The standard deviation of the VAS in the unit of m.</p></li>
+<li><p><cite>Minimum VAS (m)</cite>: The minimum of the VAS in the unit of m.</p></li>
+<li><p><cite>Maximum VAS (m)</cite>: The Maximum of the VAS in the unit of m.</p></li>
+<li><p><cite>Characteristic VAS Probability</cite>: The probabilities of characteristic VAS.</p></li>
+<li><p><cite>Characteristic VAS, Conditional (m)</cite>: The conditional characteristic VAS in the unit of m.</p></li>
+<li><p><cite>Characteristic VAS, Unconditional (m)</cite>: The unconditional characteristic VAS in the unit of m.</p></li>
+<li><p><cite>Mean of the Lateral Breakout Friction</cite>: The mean of the lateral breakout friction factor.</p></li>
+<li><p><cite>Standard Deviation of the Lateral Breakout Friction (m)</cite>: The standard deviation of the lateral breakout friction factor.</p></li>
+<li><p><cite>Minimum Lateral Breakout Friction (m)</cite>: The minimum lateral breakout friction factor.</p></li>
+<li><p><cite>Maximum Lateral Breakout Friction (m)</cite>: The maximum lateral breakout friction factor.</p></li>
+<li><p><cite>Characteristic Lateral Breakout Friction Probability</cite>: The probabilities of the characteristic lateral breakout friction factor.</p></li>
+<li><p><cite>Characteristic Lateral Breakout Friction, Buckles</cite>: The unconditional characteristic lateral breakout friction factor.</p></li>
+<li><p><cite>Lateral Breakout Friction, HE, Geotech</cite>: The high estimate of the geotechnical lateral breakout friction factor.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_sets.png" class="align-center" src="_images/excel_file_output_sets.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>No Buckles</strong>: This tab contains the probability distribution of the total number of buckles
+along the pipeline route.</p>
+<ul class="simple">
+<li><p><cite>Number of Buckles</cite>: The number of buckles.</p></li>
+<li><p><cite>Number of Simulations</cite>: The number of simulations with buckles.</p></li>
+<li><p><cite>Probability of Buckling</cite>: The probabilities of buckling.</p></li>
+<li><p><cite>Cumulative Probability of Buckling</cite>: The cumulative probabilities of buckling.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_buckles.png" class="align-center" src="_images/excel_file_output_buckles.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Force Profiles</strong>: This tab contains the effective axial force profiles.</p>
+<ul class="simple">
+<li><p><cite>KP (m)</cite>: The KP value of the element centroid in the unit of m.</p></li>
+<li><p><cite>CBF Hydrotest (kN)</cite>: The critical buckling force during hydrotest in the unit of kN.</p></li>
+<li><p><cite>CBF Operation (kN)</cite>: The critical buckling force during operation in the unit of kN.</p></li>
+<li><p><cite>EAF Installation [RLT] (kN)</cite>: The effective axial force during installation in the unit of kN.</p></li>
+<li><p><cite>EAF Hydrotest (kN)</cite>: The effective axial force during hydrotest in the unit of kN.</p></li>
+<li><p><cite>EAF Operation [Pressure Only] (kN)</cite>: The effective axial force during operation with only pressure applied in the unit of kN.</p></li>
+<li><p><cite>EAF Operation (kN)</cite>: The effective axial force during operation in the unit of kN.</p></li>
+<li><p><cite>EAF Operation [without Buckling] (kN)</cite>: The effective axial force during operation without buckling in the unit of kN.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_forceprofiles.png" class="align-center" src="_images/excel_file_output_forceprofiles.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Raw Data</strong>: This tab contains stochastic VAS and lateral friction factor outputs from
+each simulation that has triggered buckles.</p>
+<ul class="simple">
+<li><p><cite>Simulation Number</cite>: The simulation number with buckles for each KP.</p></li>
+<li><p><cite>KP (m)</cite>: The KP value of the element centroid in the unit of m.</p></li>
+<li><p><cite>Section Type</cite>: The types of elements (e.g., Spool, Straight, Bend, Sleeper and RCM).</p></li>
+<li><p><cite>Axial Residual Friction Factor, Operation</cite>: The axial residual friction factor during operation.</p></li>
+<li><p><cite>Lateral Breakout Friction Factor, Operation</cite>: The lateral breakout friction factor during operation.</p></li>
+<li><p><cite>HOOS Factor</cite>: The HOOS friction factor.</p></li>
+<li><p><cite>CBF Operation (kN)</cite>: The CBF during operation in the unit of kN.</p></li>
+<li><p><cite>VAS Operation (m)</cite>: The VAS during operation in the unit of m.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_rawdata.png" class="align-center" src="_images/excel_file_output_rawdata.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p><strong>Comb Buckles per Set</strong>: This tab contains the probability of the most frequent combinations
+based on post-processing set that has triggered buckles.</p>
+<ul class="simple">
+<li><p><cite>Combination Id</cite>: The identifier of the most frequent combination with buckles.</p></li>
+<li><p><cite>Number of Simulations</cite>: The number of simulations for each buckling combination.</p></li>
+<li><p><cite>Probability of Combination</cite>: The probabilities of each buckling combination.</p></li>
+<li><p><cite>Number of Buckles</cite>: The number of buckles for each buckling combination.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_combset.png" class="align-center" src="_images/excel_file_output_combset.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt><strong>Comb Buckles per Section</strong>: This tab contains the probability of the most frequent</dt><dd><p>combinations based on the number of sections in the route data that have triggered buckles.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><cite>Combination Id</cite>: The identifier of the most frequent combination with buckles.</p></li>
+<li><p><cite>Number of Simulations</cite>: The number of simulations for each buckling combination.</p></li>
+<li><p><cite>Probability of Combination</cite>: The probabilities of each buckling combination.</p></li>
+<li><p><cite>Number of Buckles</cite>: The number of buckles for each buckling combination.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/excel_file_output_combsection.png" class="align-center" src="_images/excel_file_output_combsection.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</section>
+<section id="output-figures">
+<h3>Output Figures<a class="headerlink" href="#output-figures" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The name of the two output figures will follow the convention:</p>
+<ul>
+<li><p>{INPUT_FILE_NAME}_{PIPELINE_ID}_scen{SCENARIO_ID}_plots-1.png.</p>
+<p>For instance, <code class="docutils literal notranslate"><span class="pre">inputFileTemplate_A_scen1_plots-1.xlsx</span></code>.</p>
+</li>
+<li><p>{INPUT_FILE_NAME}_{PIPELINE_ID}_scen{SCENARIO_ID}_plots-2.png.</p>
+<p>For instance, <code class="docutils literal notranslate"><span class="pre">inputFileTemplate_A_scen1_plots-2.xlsx</span></code>.</p>
+</li>
+</ul>
+<p>The first output figure contains the following four subplots:</p>
+<ul class="simple">
+<li><p><strong>Upper</strong>: This subplot contains the effective axial force profiles of the buckled deterministic case or first buckled random case.</p></li>
+<li><p><strong>Lower Left</strong>: This subplot contains the probability distribution of the total number of buckles along the pipeline route.</p></li>
+<li><p><strong>Lower Centre</strong>: This subplot contains the P5 lateral breakout friction factors of the geotechnical design data distribution and the distribution of the lateral breakout friction factors of the actual buckles that have triggered.</p></li>
+<li><p><strong>Lower Right</strong>: This subplot contains the probabilities of buckling and characteristic VAS.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/inputDataTemplate_A_scen1_plots-1.png" class="align-center" src="_images/inputDataTemplate_A_scen1_plots-1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>The second output figure contains the following six subplots:</p>
+<ul class="simple">
+<li><p><strong>Upper Left</strong>: This subplot contains the unbuckled effective axial force profile with the mean axial friction.</p></li>
+<li><p><strong>Upper Centre</strong>: This subplot contains the probabilities of the number of buckles.</p></li>
+<li><p><strong>Upper Right</strong>: This subplot contains the characteristic VAS per kilometre.</p></li>
+<li><p><strong>Lower Left</strong>: This subplot contains the buckled effective axial force profile with the mean axial friction and buckling force.</p></li>
+<li><p><strong>Lower Centre</strong>: This subplot contains the probabilities of buckling per kilometre.</p></li>
+<li><p><strong>Lower Right</strong>: This subplot contains the P5 lateral breakout friction factors of the geotechnical design data distribution and the distribution of the lateral breakout friction factors of the actual buckles that have triggered.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/inputDataTemplate_A_scen1_plots-2.png" class="align-center" src="_images/inputDataTemplate_A_scen1_plots-2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="how-to-clone-buckpy-to-become-a-maintainer">
+<h2>How to Clone BuckPy to become a Maintainer<a class="headerlink" href="#how-to-clone-buckpy-to-become-a-maintainer" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>To clone the <a class="reference external" href="https://github.com/Xodus-Group/BuckPy">BuckPy Repository</a> to your computer and prepare it for development in VS Code, follow these steps:</p>
+<ul class="simple">
+<li><p>Open VS Code.</p></li>
+<li><p>Press F1 and type <code class="docutils literal notranslate"><span class="pre">Git:</span> <span class="pre">Clone</span></code> to open the Git Clone dialog.</p></li>
+<li><p>Paste the repository: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/Xodus-Group/BuckPy.git</span></code></p></li>
+<li><p>Select the folder where the repository will be cloned. For example: <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">c:\\BuckPy</span></code></p></li>
+<li><p>Follow the steps in the section: Running BuckPy using the Source Code to set up the virtual environment and run BuckPy.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The repository structure is as follows:</p>
+<ol class="arabic">
+<li><p><strong>buckpy</strong>: This folder contains the main application file and core modules:</p>
+<ul class="simple">
+<li><p>Initialisation package script</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p></li>
+</ul>
+</li>
+<li><p>Main script</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy.py</span></code></p></li>
+</ul>
+</li>
+<li><p>Supporting modules</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy_gui.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy_preprocessing.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy_solver.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy_postprocessing.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy_variables.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckpy_visualisation.py</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>docs</strong>: This folder contains the Sphinx documentation and scripts used to generate Buckfast input and output files from the BuckPy input file. The two Python scripts used to write Buckfast input and output files are located in: <code class="docutils literal notranslate"><span class="pre">.//docs//_static//buckfast</span> <span class="pre">file</span> <span class="pre">writers</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buckfast_input_file_writer.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buckfast_output_file_compiler.py</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>examples</strong>: This folder contains sample Excel input files for running the BuckPy simulations.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inputDataTemplateA.xlsx</span></code>: Pipeline with rogue buckles only.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputDataTemplateB.xlsx</span></code>: Pipeline with simple sleepers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inputDataTemplateC.xlsx</span></code>: Pipeline with RCM route type.</p></li>
+</ul>
+</li>
+<li><p><strong>.gitignore</strong>: Specifies files and directories that should be ignored by Git version control.</p></li>
+<li><p><strong>LICENSE</strong>: Contains the <em>GNU General Public License v3.0</em> under which BuckPy has been released.</p></li>
+<li><p><strong>README</strong>: The main repository description and usage overview.</p></li>
+<li><p><strong>REQUIREMENTS.txt</strong>: Contains the list of Python libraries and their versions required to run BuckPy.</p></li>
+<li><p><strong>setup.py</strong>: The setup script used to package BuckPy for distribution via pip.</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BuckPy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="technical_references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Technical References</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-buckpy-using-the-pip-install-package">Launching BuckPy using the pip install Package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-buckpy-using-the-source-code">Launching BuckPy using the Source Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-start-a-simulation">How to Start a Simulation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-design-data">How to Modify the Design Data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-the-gui">Data to be Modified in the GUI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-the-inputfiletemplate-current-xlsx">Data to be Modified in the <code class="docutils literal notranslate"><span class="pre">inputFileTemplate_Current.xlsx</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-the-inputfiletemplate-legacy-xlsx">Data to be Modified in the <code class="docutils literal notranslate"><span class="pre">inputFileTemplate_Legacy.xlsx</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-output-data-is-generated-by-buckpy">Which Output Data is Generated by BuckPy?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-excel-file">Output Excel file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-figures">Output Figures</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-clone-buckpy-to-become-a-maintainer">How to Clone BuckPy to become a Maintainer</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/getting_started.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Ismael Ripoll, Carlos Sicilia &amp; Emilien Bonnet.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
