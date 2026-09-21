@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>API Reference &#8212; BuckPy 0.1.5 documentation</title>
+    <title>API Reference &#8212; BuckPy 0.0.4 documentation</title>
   
   
   
@@ -27,19 +27,19 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a5e77869" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5c20f255" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
-    <script src="_static/documentation_options.js?v=59fadc99"></script>
+    <script src="_static/documentation_options.js?v=8c5712d9"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules';</script>
@@ -122,8 +122,8 @@
       
     
     
-    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.5 documentation - Home"/>
-    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.5 documentation - Home"/>
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.0.4 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.0.4 documentation - Home"/>
   
   
 </a></div>
@@ -376,14 +376,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="buckpy.html">Main Module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="buckpy.html#buckpy.buckpy.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy.html#buckpy.buckpy.run_simulation"><code class="docutils literal notranslate"><span class="pre">run_simulation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy.html#buckpy.buckpy.start_simulation"><code class="docutils literal notranslate"><span class="pre">start_simulation()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="buckpy_gui.html">GUI Module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI"><code class="docutils literal notranslate"><span class="pre">GUI</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.close_app"><code class="docutils literal notranslate"><span class="pre">GUI.close_app()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.create_widgets"><code class="docutils literal notranslate"><span class="pre">GUI.create_widgets()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.open_file"><code class="docutils literal notranslate"><span class="pre">GUI.open_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.poll_output"><code class="docutils literal notranslate"><span class="pre">GUI.poll_output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.set_output_queue"><code class="docutils literal notranslate"><span class="pre">GUI.set_output_queue()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.setup_treeview"><code class="docutils literal notranslate"><span class="pre">GUI.setup_treeview()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.validate_and_run"><code class="docutils literal notranslate"><span class="pre">GUI.validate_and_run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy.buckpy_gui.GUI.write_output"><code class="docutils literal notranslate"><span class="pre">GUI.write_output()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -402,6 +407,7 @@
 <li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing_current.html#buckpy.buckpy_preprocessing_current.PreProcessor.calc_route_data"><code class="docutils literal notranslate"><span class="pre">PreProcessor.calc_route_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing_current.html#buckpy.buckpy_preprocessing_current.PreProcessor.calc_scenario_data"><code class="docutils literal notranslate"><span class="pre">PreProcessor.calc_scenario_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing_current.html#buckpy.buckpy_preprocessing_current.PreProcessor.calc_soil_data"><code class="docutils literal notranslate"><span class="pre">PreProcessor.calc_soil_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing_current.html#buckpy.buckpy_preprocessing_current.PreProcessor.create_automatic_pp_df"><code class="docutils literal notranslate"><span class="pre">PreProcessor.create_automatic_pp_df()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing_current.html#buckpy.buckpy_preprocessing_current.PreProcessor.interpolate_oper_profile_on_kp"><code class="docutils literal notranslate"><span class="pre">PreProcessor.interpolate_oper_profile_on_kp()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing_current.html#buckpy.buckpy_preprocessing_current.PreProcessor.run"><code class="docutils literal notranslate"><span class="pre">PreProcessor.run()</span></code></a></li>
 </ul>
@@ -531,8 +537,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -566,7 +572,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>

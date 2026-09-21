@@ -43,3 +43,17 @@ SPT 2025: Analysis of Horizontal OOS Survey Data for use in Probabilistic Latera
  Based on these results, the paper proposes a detailed methodology to produce a systematic quantification of the OOS features, based on mathematical post-processing and Finite Element modelling of the survey data. The paper also discusses the creation of an industry-wide database of OOS data, intended to gradually improve the OOS distributions available for the design of new pipelines.
 
  :download:`SPT 2025: Analysis of Horizontal OOS Survey Data for use in Probabilistic Lateral Buckling Design <_static/SPT 2025 - Analysis of Horizontal OOS Survey Data for use in Probabilistic Lateral Buckling Design.pdf>`
+
+***************************************
+SPT 2026 - CBF at Conventional Sleepers
+***************************************
+
+ Conventional sleepers have historically provided a simple and economical means of initiating controlled lateral buckles in high-temperature, high-pressure subsea pipelines. However, probabilistic assessments using the critical buckling force formulations in DNV-RP-F110 tend to show that these initiators are not sufficiently reliable, which pushes projects to use more expensive triggers instead, such as active sleepers. And yet, conventional sleepers, when used, have a very good track record.
+
+ In order to investigate this discrepancy, this paper investigates the forces at which lateral buckles form over conventional sleepers, using analytical formulations, linear perturbation analyses and nonlinear finite element simulations. These methods are applied to twelve representative pipeline configurations in different soil conditions.
+
+ From the insights of these assessments, the key input parameters and mechanisms are identified. This is used to propose a modification to the sleeper CBF distribution for use in probabilistic lateral buckling assessments. This approach is then applied to the case study of a pipeline in operation and shown to predict results more in line with the observed response of the pipeline.
+
+ It is expected that this improved methodology will allow the use of conventional sleepers again in projects and lead to significant cost reductions.
+
+ :download:`SPT 2026: CBF at Conventional Sleepers <_static/SPT 2026 - CBF at Conventional Sleepers.pdf>`

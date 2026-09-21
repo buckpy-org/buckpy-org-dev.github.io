@@ -3,6 +3,14 @@ Updates by Half-Year
 ####################
 
 ***********************
+H1 2026 (January–June)
+***********************
+
+   - Improved the Input Excel File for easier data entry (including Mitigation and Soil Zoning Tabs).
+
+   - Integration with Py-Subsea.
+
+***********************
 H2 2025 (July–December)
 ***********************
 

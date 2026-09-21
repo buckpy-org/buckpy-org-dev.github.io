@@ -17,7 +17,7 @@ Launching BuckPy using the pip install Package
 
        ``$ python -m venv .venv``
 
-     - Install BuckPy using pip (Python >=3.9 and <=3.12):
+      - Install BuckPy using pip (Python 3.12):
 
        ``$ pip install buckpy``
 
@@ -95,9 +95,10 @@ Data to be Modified in the GUI
   #. **Select Excel input file**: A dialog will open to select the Excel input file. The output file and plot will also be stored in this directory.
   #. **Pipeline ID**: Pipeline of the input file to be analysed.
   #. **Scenario ID**: Pipeline scenario or sensitivity to be analysed. Multiple scenarios can be defined and will be run in a batch process (comma-separated).
-  #. **Enable verbose output**: True or False flag to select whether the information on how the script progresses needs to be printed out in the terminal.
+  #. **Enable verbose output**: True or False flag to select whether progress information is displayed in the Simulation output area of the GUI.
   #. **Extract extended results**: True or False flag to select whether extended results need to be extracted. This functionality is still under development and can slow down the simulation significantly.
-  #. **Run all scenarios**: Press this button to run all the selected scenarios.
+  #. **Automatic post-processing**: True or False flag to select whether post-processing sets are generated automatically. This option is available for the Current Excel format and overrides the Post-Processing tab. The Post-Processing tab is not required when this option is set to True.
+  #. **Run all scenarios**: Press this button to run all the selected scenarios. The GUI remains open while the simulation runs and displays progress and error messages in the Simulation output area.
 
   The following image has been taken from the `GUI` of `buckpy.py` to illustrate how the previous 
   variables actually look in the script:
@@ -115,6 +116,7 @@ Data to be Modified in the ``inputFileTemplate_Current.xlsx``
   - **Route**: Defines the pipeline route. This tab has been simplified for usability and no longer includes mitigation measures or soil zoning data.
   - **Mitigation**: Defines the mitigation measures that can be applied along the pipeline route.
   - **Soil Zoning**: Defines the soil zoning information applicable to the pipeline route.
+  - **Post-Processing**: Defines the post-processing sets used for the results. This tab is optional only when **Automatic post-processing** is set to True in the GUI; when it is set to False, this tab is required.
   
   Additional guidance on how to modify design data using the current format will be provided in future documentation.
   In the meantime, the examples provided in the repository include both legacy and current formats and are intended to be self-explanatory.

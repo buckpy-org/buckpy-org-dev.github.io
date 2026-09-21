@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; BuckPy 0.1.5 documentation</title>
+    <title>Getting Started &#8212; BuckPy 0.0.4 documentation</title>
   
   
   
@@ -27,19 +27,19 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5c20f255" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
-    <script src="_static/documentation_options.js?v=59fadc99"></script>
+    <script src="_static/documentation_options.js?v=8c5712d9"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started';</script>
@@ -122,8 +122,8 @@
       
     
     
-    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.5 documentation - Home"/>
-    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.5 documentation - Home"/>
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.0.4 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.0.4 documentation - Home"/>
   
   
 </a></div>
@@ -385,11 +385,18 @@
 <li><p>Open a Windows terminal in this folder and create a virtual environment:</p>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">.venv</span></code></p>
 </li>
-<li><p>Install BuckPy using pip (Python &gt;=3.9 and &lt;=3.12):</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">buckpy</span></code></p>
-</li>
-<li><p>Notes:</p>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Install BuckPy using pip (Python 3.12):</p></li>
+</ul>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">buckpy</span></code></p>
+</div></blockquote>
+</div></blockquote>
 <ul class="simple">
+<li><p>Notes:</p>
+<ul>
 <li><p>BuckPy can be installed and run by anyone using pip install buckpy, regardless of whether they have access to the private BuckPy repository.</p></li>
 <li><p>Installing BuckPy <strong>inside</strong> the virtual environment is important. Installing it globally may interfere with other Python scripts or libraries already on your system.</p></li>
 </ul>
@@ -477,9 +484,10 @@
 <li><p><strong>Select Excel input file</strong>: A dialog will open to select the Excel input file. The output file and plot will also be stored in this directory.</p></li>
 <li><p><strong>Pipeline ID</strong>: Pipeline of the input file to be analysed.</p></li>
 <li><p><strong>Scenario ID</strong>: Pipeline scenario or sensitivity to be analysed. Multiple scenarios can be defined and will be run in a batch process (comma-separated).</p></li>
-<li><p><strong>Enable verbose output</strong>: True or False flag to select whether the information on how the script progresses needs to be printed out in the terminal.</p></li>
+<li><p><strong>Enable verbose output</strong>: True or False flag to select whether progress information is displayed in the Simulation output area of the GUI.</p></li>
 <li><p><strong>Extract extended results</strong>: True or False flag to select whether extended results need to be extracted. This functionality is still under development and can slow down the simulation significantly.</p></li>
-<li><p><strong>Run all scenarios</strong>: Press this button to run all the selected scenarios.</p></li>
+<li><p><strong>Automatic post-processing</strong>: True or False flag to select whether post-processing sets are generated automatically. This option is available for the Current Excel format and overrides the Post-Processing tab. The Post-Processing tab is not required when this option is set to True.</p></li>
+<li><p><strong>Run all scenarios</strong>: Press this button to run all the selected scenarios. The GUI remains open while the simulation runs and displays progress and error messages in the Simulation output area.</p></li>
 </ol>
 <p>The following image has been taken from the <cite>GUI</cite> of <cite>buckpy.py</cite> to illustrate how the previous
 variables actually look in the script:</p>
@@ -496,6 +504,7 @@ It introduces three main tabs:</p>
 <li><p><strong>Route</strong>: Defines the pipeline route. This tab has been simplified for usability and no longer includes mitigation measures or soil zoning data.</p></li>
 <li><p><strong>Mitigation</strong>: Defines the mitigation measures that can be applied along the pipeline route.</p></li>
 <li><p><strong>Soil Zoning</strong>: Defines the soil zoning information applicable to the pipeline route.</p></li>
+<li><p><strong>Post-Processing</strong>: Defines the post-processing sets used for the results. This tab is optional only when <strong>Automatic post-processing</strong> is set to True in the GUI; when it is set to False, this tab is required.</p></li>
 </ul>
 <p>Additional guidance on how to modify design data using the current format will be provided in future documentation.
 In the meantime, the examples provided in the repository include both legacy and current formats and are intended to be self-explanatory.</p>
@@ -1040,8 +1049,8 @@ based on post-processing set that has triggered buckles.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1075,7 +1084,7 @@ based on post-processing set that has triggered buckles.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.18.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
 </p></div>
       
     </div>
