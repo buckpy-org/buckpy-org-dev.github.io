@@ -15,11 +15,11 @@ Launching BuckPy using the pip install Package
   
      - Open a Windows terminal in this folder and create a virtual environment:
 
-       ``$ python -m venv .venv``
+       ``$ py -3.12 -m venv .venv``
 
       - Install BuckPy using pip (Python 3.12):
 
-       ``$ pip install buckpy``
+       ``$ py -3.12 -m pip install buckpy-dev``
 
      - Notes:
 
